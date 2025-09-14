@@ -60,16 +60,16 @@ def scrape_law(url, output_dir):
 # --- 3. Main loop to scrape multiple laws ---
 if __name__ == '__main__':
     law_urls = [
-        'https://www.riigiteataja.ee/akt/112112023014',
-        'https://www.riigiteataja.ee/akt/109012024001',
-        'https://www.riigiteataja.ee/akt/103012024003',
-        'https://www.riigiteataja.ee/akt/104032024005',
-        'https://www.riigiteataja.ee/akt/118012024002',
-        'https://www.riigiteataja.ee/akt/106042024002',
-        'https://www.riigiteataja.ee/akt/115022024001',
-        'https://www.riigiteataja.ee/akt/107012024002',
-        'https://www.riigiteataja.ee/akt/113012024003',
-        'https://www.riigiteataja.ee/akt/116012024004'
+        'https://www.riigiteataja.ee/akt/120022024006',
+        'https://www.riigiteataja.ee/akt/114032023031',
+        'https://www.riigiteataja.ee/akt/117042025011',
+        'https://www.riigiteataja.ee/akt/118042025002',
+        'https://www.riigiteataja.ee/akt/130042024003',
+        'https://www.riigiteataja.ee/akt/114032023025',
+        'https://www.riigiteataja.ee/akt/112032015036',
+        'https://www.riigiteataja.ee/akt/127092024006',
+        'https://www.riigiteataja.ee/akt/108072025047',
+        'https://www.riigiteataja.ee/akt/102012025076'
     ]
 
     # Set output folder relative to script location
