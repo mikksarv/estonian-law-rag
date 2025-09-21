@@ -11,15 +11,12 @@ A Retrieval-Augmented Generation (RAG) system for Estonian law documents using P
    Then:
    .\setup.ps1
 ```
-
 ### 2.🔁 How to run the project every time
 ```
   First:
   cd E:\EST_LAW_RAG\estonian-law-rag\venv\Scripts
   Then:
   .\Activate.ps1
-  
-   
 ```
 ### 3.🚀 Test the LLM by running
 ```
@@ -27,7 +24,6 @@ A Retrieval-Augmented Generation (RAG) system for Estonian law documents using P
    cd cd E:\EST_LAW_RAG\estonian-law-rag\test_scripts\
    Then:
    python test_qa_bloom_1b1.py
-   
 ```
 ### V 1.0
    
