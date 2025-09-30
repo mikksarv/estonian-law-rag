@@ -21,9 +21,9 @@ A Retrieval-Augmented Generation (RAG) system for Estonian law documents using P
 ### 3.🚀 Test the LLM by running
 ```
    First:
-   cd cd E:\EST_LAW_RAG\estonian-law-rag\test_scripts\
+   cd E:\EST_LAW_RAG\estonian-law-rag\test_scripts\
    Then:
-   python test_qa_bloom_1b1.py
+   python test_llama_3.py
 ```
 ### V 1.0
    
