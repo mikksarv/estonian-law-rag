@@ -23,12 +23,37 @@ def query_rag(question, top_k=3):
     )
 
     retrieved_chunks = results["documents"][0]
-    context = "\n".join(retrieved_chunks)
+    context = "\n".join(retrieved_chunks).strip()
 
-    prompt = (
-        f"### Instruction:\n"
-        f"{context}\n\nKüsimus: {question}\n\n### Vastus:"
-    )
+    # Step 4: Build prompt with example + context + question
+    example = """### Näide:
+Kontekst:
+Ülem on isik, kellele on teenistuslikult allutatud teised kaitseväelased.
 
-    response = llm(prompt, max_tokens=200)
-    return response["choices"][0]["text"].strip()
+Küsimus:
+Kes on ülem?
+
+Vastus:
+Ülem on kaitseväelane, kes juhib talle allutatud kaitseväelasi."""
+
+    prompt = f"""{example}
+
+### Kontekst:
+{context}
+
+### Küsimus:
+{question}
+
+### Vastus:"""
+
+    response = llm(prompt, max_tokens=200, stop=["###"])
+    answer = response["choices"][0]["text"].strip()
+
+    # Step 6: Quality control
+    if not context or any(x in answer.lower() for x in ["ma ei tea", "pole teada", "ei ole infot"]):
+        return "Mul puuduvad andmed antud teema kohta."
+
+    if len(answer) < 5:
+        return "Palun täpsusta küsimust."
+
+    return answer
