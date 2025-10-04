@@ -26,7 +26,8 @@ metadata_list = []      # Metadata for each chunk
 
 # === PROCESS ALL LAW FILES ===
 print(f"📂 Reading files from: {json_folder}")
-for filename in os.listdir(json_folder):
+files_to_process = ["Kaitseväeteenistuse_seaduse_rakendamise_seadus_(lühend - KVTRS).json"]  # just your test file
+for filename in files_to_process:
     if filename.endswith(".json"):
         filepath = os.path.join(json_folder, filename)
 
