@@ -7,9 +7,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../scri
 from rag_pipeline import query_rag
 
 questions = [
-    "Loetle, mis sorti riigisaladusi on olemas?",
-    "Millised on ajateenistuse kestused?",
-    "Mis on Kaitseliidu ülesanded?",
+    "Milliseid kutsealuseid ei kutsuta ajateenistusse?",
+    "Mis täpsusega arvestatakse kaitseväeteenistuse staaž tegevteenistusstaaži hulka?",
+    "Loetle, mis on täiendõppe kulu arvestamise aluseks loetud kulud?",
+
+
+
+
 ]
 
 for q in questions:
