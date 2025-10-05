@@ -28,32 +28,44 @@ def query_rag(question, top_k=3):
     if not context or len(context) < 20:
         return "Mul puuduvad andmed antud teema kohta."
 
-    # Prompt template
-    example = """### Näide:
-Kontekst:
-Ülem on isik, kellele on teenistuslikult allutatud teised kaitseväelased.
+    # Strict prompt
+    prompt = f"""
+Saadud tekst on seadusetekst. Vasta ainult selle teksti põhjal. Ära lisa ega parafraseeri midagi, kui vastus ei ole otseselt tekstis olemas, siis vasta: "Vastus puudub esitatud seadustekstist."
 
-Küsimus:
-Kes on ülem?
-
-Vastus:
-Ülem on kaitseväelane, kes juhib talle allutatud kaitseväelasi."""
-
-    prompt = f"""{example}
-
-### Kontekst:
+--- Seadusetekst ---
 {context}
 
-### Küsimus:
+--- Küsimus ---
 {question}
 
-### Vastus:"""
+--- Vastus ---
+"""
 
     # === Suppress llama logs fully
     with suppress_llama_logs():
         response = llm(prompt, max_tokens=200, stop=["###"])
 
     answer = response["choices"][0]["text"].strip()
+
+    # === Check if model failed or was too cautious
+    if "Vastus puudub" in answer or len(answer) < 10:
+        # 🛠 Extractive fallback
+        question_words = question.lower().split()
+        best_score = 0
+        best_sentence = ""
+
+        for chunk in retrieved_chunks:
+            sentences = chunk.split(".")
+            for sentence in sentences:
+                score = sum(1 for word in question_words if word in sentence.lower())
+                if score > best_score:
+                    best_score = score
+                    best_sentence = sentence.strip()
+
+        if best_score >= max(1, len(question_words) // 3):
+            return f"{best_sentence}"
+
+        return "Mul puuduvad andmed antud teema kohta."
 
     if not context or any(x in answer.lower() for x in ["ma ei tea", "pole teada", "ei ole infot"]):
         return "Mul puuduvad andmed antud teema kohta."
@@ -62,3 +74,4 @@ Vastus:
         return "Palun täpsusta küsimust."
 
     return answer
+
