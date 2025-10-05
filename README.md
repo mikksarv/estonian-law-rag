@@ -23,7 +23,7 @@ A Retrieval-Augmented Generation (RAG) system for Estonian law documents using P
    First:
    cd E:\EST_LAW_RAG\estonian-law-rag\test_scripts\
    Then:
-   python test_llama_3.py
+   python test_llama_3_2.py
 ```
 ### V 1.0
    
