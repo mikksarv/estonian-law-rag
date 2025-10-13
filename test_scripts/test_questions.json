@@ -1,0 +1,117 @@
+[
+  {
+    "id": "q1",
+    "question": "Mis juhtub reservis oleva isikuga või reservväelasega, kui arstlik komisjon tunnistab ta tegevteenistuseks mittekõlblikuks?",
+    "expected_answer_contains": ["mittekõlblikuks", "reservis"],
+    "expected_answer_not_contains": ["kõlblikuks piirangutega"]
+  },
+  {
+    "id": "q2",
+    "question": "Mis täpsusega arvestatakse kaitseväeteenistuse staaž tegevteenistusstaaži hulka?",
+    "expected_answer_contains": ["päeva täpsusega"]
+  },
+  {
+    "id": "q3",
+    "question": "Loetle, mis on täiendõppe kulu arvestamise aluseks loetud kulud?",
+    "expected_answer_contains": ["koolitustasu", "sõidukulu", "majutuskulu"]
+  },
+  {
+    "id": "q4",
+    "question": "Millal jõustub Kaitseväeteenistuse seadus ja mida see tähendab seaduse rakendamise seisukohast?",
+    "expected_answer_contains": ["2013. aasta 1. aprillil", "jõustub"],
+    "expected_answer_not_contains": ["kaitseväekohustuslaste register"]
+  },
+  {
+    "id": "q5",
+    "question": "Mis on kaitseväekohustuslaste register ja milliseid andmeid sinna kantakse vastavalt seadusele?",
+    "expected_answer_contains": ["kaitseväekohustuslaste registrisse","kaitseväekohustuslaste registrister", "andmete kandmine"],
+    "expected_answer_not_contains": ["jõustumine", "seaduse jõustamine"]
+  },
+  {
+    "id": "q6",
+    "question": "Kas seaduse jõustumise kuupäev mõjutab kaitseväekohustuslaste andmete registreerimist? Selgita seost.",
+    "expected_answer_contains": ["seaduse jõustumine", "andmete kandmine", "kaitseväekohustuslaste registrisse"],
+    "expected_answer_not_contains": ["reservis oleku tingimused"]
+  },
+  {
+    "id": "q7",
+    "question": "Milline seaduse paragrahv käsitleb kaitseväekohustuslaste andmete kandmist ja kuidas see on seotud seaduse jõustumisega?",
+    "expected_answer_contains": ["§ 2", "kaitseväekohustuslaste andmete kandmine", "seaduse jõustumine"],
+    "expected_answer_not_contains": ["kaitseväeteenistuse mittekõlblikkus"]
+  },
+  {
+    "id": "q8",
+    "question": "Millised kulud arvestab Kaitsevägi ressursimahuka koolituse ja täiendusõppe puhul vastavalt § 20 lõikele 2?",
+    "expected_answer_contains": [
+      "koolitustasu",
+      "sõidukulu",
+      "majutuskulu",
+      "päevaraha",
+      "välislähetustasu",
+      "kindlustusega seotud kulu"
+    ],
+    "expected_answer_not_contains": [
+      "palk",
+      "hüvitis",
+      "reservi"
+    ]
+  },
+  {
+    "id": "q9",
+    "question": "Milliseid andmeid peab sisaldama ressursimahuka koolituse kulu arvestamise teatis tegevväelasele enne tegevteenistusest vabastamist, vastavalt § 21 lõikele 1?",
+    "expected_answer_contains": [
+      "isiku ees- ja perekonnanimi",
+      "isikukood",
+      "isiku elukoht",
+      "õppekava nominaalõppeaeg",
+      "õppeaja algus- ja lõppkuupäev",
+      "koolituskulu loetelu ja maksumus",
+      "teatise koostaja nimi ja allkiri",
+      "teatise koostamise kuupäev"
+    ],
+    "expected_answer_not_contains": [
+      "täiendusõppe kulu",
+      "reservi määramine"
+    ]
+  },
+  {
+    "id": "q10",
+    "question": "Mis juhtub isikuga, kes lahkub tegevteenistusest enne ressursimahuka koolituse või täiendusõppe haldusaktis määratud tähtaja lõppu, vastavalt § 22 lõikele 1?",
+    "expected_answer_contains": [
+      "kohustus hüvitada kulu",
+      "kulu tuleb tasuda ühe kuu jooksul",
+      "tegevteenistusest vabastamisest arvates"
+    ],
+    "expected_answer_not_contains": [
+      "palk",
+      "reserv",
+      "pension"
+    ]
+  },
+  {
+    "id": "q11",
+    "question": "Kuidas käsitletakse kaitseväeteenistuse seaduse jõustumisel seni ametis olnud Kaitseväe juhatajat ja teisi kõrgeid ametnikke, vastavalt § 23 lõikele 1 ja 2?",
+    "expected_answer_contains": [
+      "jätkavad ametikohal kuni tähtaja lõpuni",
+      "peavad teatama vabastamise soovist 30 päeva jooksul",
+      "vabastatakse hüvitiseta"
+    ],
+    "expected_answer_not_contains": [
+      "kulu hüvitamine",
+      "pensioni suurendamine"
+    ]
+  },
+  {
+    "id": "q12",
+    "question": "Milline on tegevväelase palk kaitseväeteenistuse seaduse jõustumisel, kui senine palk on madalam, vastavalt § 24 lõikele 1?",
+    "expected_answer_contains": [
+      "jätkatakse senise teenistustasu suuruse palga maksmist",
+      "kuni uuele rahuaja ametikohale nimetamiseni"
+    ],
+    "expected_answer_not_contains": [
+      "koolituskulu",
+      "ressursimahuka kulu",
+      "pension"
+    ]
+  }
+]
