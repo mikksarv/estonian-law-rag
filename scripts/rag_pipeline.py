@@ -3,7 +3,7 @@ from chromadb import PersistentClient
 from setup_llm_llama_3 import load_llm, suppress_llama_logs
 
 # === Load embedding model
-embedding_model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+embedding_model = SentenceTransformer("sentence-transformers/paraphrase-multilingual-mpnet-base-v2")
 
 # === Load ChromaDB
 persist_dir = "../chroma_db"
